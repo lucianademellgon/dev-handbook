@@ -19,24 +19,3 @@ Before analyzing algorithms, define these properties (crucial for exam theory):
 | **Insertion Sort**| $O(n)$ | $O(n^2)$ | $O(n^2)$ | $O(1)$ | ✅ Yes | Insertion |
 | **Merge Sort** | $O(n \log n)$ | $O(n \log n)$| $O(n \log n)$| $O(n)$ | ✅ Yes | Merging |
 | **Quick Sort** | $O(n \log n)$ | $O(n \log n)$| $O(n^2)$ | $O(\log n)$| ❌ No | Partitioning |
-
----
-
-## 3. Elementary Sorts ($O(n^2)$)
-
-### 🫧 Bubble Sort
-**Logic:** Repeatedly swap adjacent elements if they are in the wrong order. Large elements "bubble" to the top.
-* **Use case:** Educational purposes mostly. Inefficient for large datasets.
-
-```python
-def bubble_sort(arr):
-    n = len(arr)
-    for i in range(n):
-        swapped = False
-        # Last i elements are already in place
-        for j in range(0, n - i - 1):
-            if arr[j] > arr[j + 1]:
-                arr[j], arr[j + 1] = arr[j + 1], arr[j] # Swap
-                swapped = True
-        if not swapped: break # Optimization: Stop if already sorted
-    return arr
